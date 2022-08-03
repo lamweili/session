@@ -34,7 +34,7 @@ jobs:
 
         include:
         - name: Node.js 0.8
-          node-version: "0.8"
+          node-version: "0.8.10"
           npm-i: mocha@2.5.3 supertest@1.1.0
           npm-rm: nyc
 
