@@ -272,7 +272,7 @@ function session(options) {
           return ret;
         }
 
-        if (!res._header) {
+        if (!res.headersSent) {
           res.writeHead(res.statusCode)
         }
 
