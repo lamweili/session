@@ -1384,6 +1384,7 @@ describe('session()', function(){
   describe('res._header patch', function () {
     it('should be equivalent to res.headersSent', function (done) {
       request(createServer(function(req, res) {
+        console.log(typeof res._header, typeof res.headersSent)
         assert.strictEqual(!!res._header, !!res.headersSent,
           'res._header should be equal to res.headersSent (prior state change')
 
@@ -1391,7 +1392,7 @@ describe('session()', function(){
         res.end('ended')
         var newState = !!res._header;
         assert.notStrictEqual(oldState, newState)
-
+        console.log(typeof res._header, typeof res.headersSent)
         assert.strictEqual(!!res._header, !!res.headersSent,
           'res._header should be equal to res.headersSent (after state change)')
       }))
